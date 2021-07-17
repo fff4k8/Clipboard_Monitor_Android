@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable name="clip" type="com.example.Clipboard_monitor.Clip" />
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/my_layout"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    tools:background="@color/cardview_light_background"
+    >
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/ipLabel"
+                android:layout_weight="0.5"
+                android:text="@{clip.ip}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:maxLines="1"
+                android:maxLength="15"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/messageLabel"
+                android:layout_weight="0.5"
+                android:text="@{clip.message}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:maxLength="15"
+                android:maxLines="1"
+                android:ellipsize="end"
+              />
+
+            <Button
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="copy" />
+
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>
